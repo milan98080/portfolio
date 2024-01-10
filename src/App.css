@@ -1,0 +1,20 @@
+.first{
+    background-image: url(first.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.second{
+    background-image: url(second.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.third{
+    background-image: url(third.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.forth{
+    background-image: url(forth.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
