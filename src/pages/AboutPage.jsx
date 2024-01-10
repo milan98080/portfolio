@@ -12,7 +12,7 @@ const AboutPage = ({page}) => {
 
   const downloadCV = () => {
     const aTag = document.createElement('a');
-    aTag.href = 'http://localhost:5173/CV_MILAN_POKHREL.pdf';
+    aTag.href = 'http://milan98080.github.io/portfolio/CV_MILAN_POKHREL.pdf';
     aTag.setAttribute('download', 'CV_MILAN_POKHREL.pdf');
     document.body.appendChild(aTag);
     aTag.click();
