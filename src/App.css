@@ -1,20 +1,20 @@
 .first{
-    background-image: url(../public/first.jpg);
+    background-image: url(/first.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .second{
-    background-image: url(../public/second.jpg);
+    background-image: url(/second.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .third{
-    background-image: url(../public/third.jpg);
+    background-image: url(/third.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .forth{
-    background-image: url(../public/forth.jpg);
+    background-image: url(/forth.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
