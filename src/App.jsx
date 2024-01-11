@@ -20,13 +20,13 @@ function App() {
     if(counter === 100){
       return;
     }
-    setCounter(counter + Math.floor(Math.random() * 10) + 1);
+    setCounter(prev=> prev + Math.floor(Math.random() * 10) + 1)
 
     if(counter > 100){
       setCounter(100);
     }
 
-    let delay = Math.floor(Math.random() * 200) + 50;
+    let delay = Math.floor(Math.random() * 900) + 50;
 
     setTimeout(updateCounter, delay);
   }
@@ -104,6 +104,7 @@ function App() {
     <>
     <div className='loading absolute z-30'>
     <h1 className='counter fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-9xl '>{counter}</h1>
+    <div className={` loader `}></div>
     <div className='overlay h-[100dvh] w-[100dvw] z-10 flex'>
       <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
       <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>

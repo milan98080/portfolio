@@ -1,8 +1,11 @@
 import React from 'react'
+import TopBar from '../components/TopBar'
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <>
+    <TopBar/>
+    </>
   )
 }
 
