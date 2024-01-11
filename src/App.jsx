@@ -1,6 +1,6 @@
 import './App.css';
 import gsap from 'gsap';
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import AboutPage from './pages/AboutPage';
 import WorkAndEducationPage from './pages/WorkAndEducationPage';
 import TechnologiesPage from './pages/TechnologiesPage';
@@ -11,7 +11,45 @@ function App() {
   const page = ["first", "second", "third", "forth"]
   let numberOfPages = 0;
   const [currentPage, setCurrentPage] = useState(1)
+  const [counter, setCounter] = useState(0)
   const slidepage = gsap.timeline();
+
+  const tl = gsap.timeline();
+
+  const updateCounter = () => {
+    if(counter === 100){
+      return;
+    }
+    setCounter(counter + Math.floor(Math.random() * 10) + 1);
+
+    if(counter > 100){
+      setCounter(100);
+    }
+
+    let delay = Math.floor(Math.random() * 200) + 50;
+
+    setTimeout(updateCounter, delay);
+  }
+
+  useLayoutEffect(() => {
+    updateCounter();
+    tl.to(".counter", 0.25 , {
+      delay: 3.5,
+      opacity: 0,
+      zIndex: -1,
+    }).to(".bar", 1.5 , {
+      delay: 3.5,
+      height: 0,
+      zIndex: -1,
+      stagger: {
+        amount: 0.5,
+      },
+      ease: "power4.inOut"
+    }).to(".loading", {
+      zIndex: -1,
+      duration: 0.1
+    })
+  }, [])
 
   const navigate = (num) => {
     numberOfPages = Math.abs(currentPage - num)
@@ -64,6 +102,21 @@ function App() {
 
   return (
     <>
+    <div className='loading absolute z-30'>
+    <h1 className='counter fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-9xl '>{counter}</h1>
+    <div className='overlay h-[100dvh] w-[100dvw] z-10 flex'>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+    </div>
+    </div>
       <section className={`${(currentPage > 4) && "w-[80dvw]"} forth absolute  lg:w-[100dvw] h-full flex`}>
         <div className=' h-full lg:ml-[15dvw] w-[100dvw] lg:w-[80dvw] bg-black bg-opacity-70 '>
           <ContactPage page={currentPage}/>
