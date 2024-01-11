@@ -33,7 +33,7 @@ const AboutPage = ({ page }) => {
           <h1 className='font-semibold text-xl text-white'>Download CV</h1>
         </div>
       </div>
-      <div className=' absolute flex items-center right-10 bottom-96'>
+      <div className=' absolute lg:hidden flex items-center right-10 bottom-96 md:bottom-44'>
         <MdOutlineSwipeLeft size={25} className=' text-white'/> &nbsp; &nbsp; <h1 className=' text-neutral-400 font-thin text-xl'> Swipe to Explore</h1>
       </div>
       <div className='absolute md:block mx-8 md:pt-10 lg:absolute flex flex-col lg:w-full bottom-32 lg:bottom-0 left-0  lg:mx-16 lg:mb-10'>
