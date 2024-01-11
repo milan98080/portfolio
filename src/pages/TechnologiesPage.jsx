@@ -119,9 +119,9 @@ const TechnologiesPage = ({ page }) => {
           <h1 className=' text-neutral-300 font-bold text-2xl'>Frontend Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
-              FrontendTechnologies.map((tech, index) => (
+              FrontendTechnologies.map((tech) => (
                 <div className='flex flex-col items-center justify-center'>
-                  <CircularProgressbarWithChildren key={index} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
+                  <CircularProgressbarWithChildren key={tech.name} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
                     <a href={tech.link} target='_blank' rel='noreferrer'>
                       <div className=' rounded-full p-3 bg-white flex items-center justify-center'>
                         {
@@ -146,9 +146,9 @@ const TechnologiesPage = ({ page }) => {
           <h1 className='text-neutral-300  font-bold text-2xl'>Backend Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
-              BackendTechnologies.map((tech, index) => (
+              BackendTechnologies.map((tech) => (
                 <div className='flex flex-col items-center justify-center'>
-                  <CircularProgressbarWithChildren key={index} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
+                  <CircularProgressbarWithChildren key={tech.name} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
                     <a href={tech.link} target='_blank' rel='noreferrer'>
                       <div className=' rounded-full p-3 bg-white flex items-center justify-center'>
                         {
@@ -173,9 +173,9 @@ const TechnologiesPage = ({ page }) => {
           <h1 className='text-neutral-300 font-bold text-2xl'>Cloud Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
-              CloudTechnologies.map((tech, index) => (
+              CloudTechnologies.map((tech) => (
                 <div className='flex flex-col items-center justify-center'>
-                  <CircularProgressbarWithChildren key={index} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
+                  <CircularProgressbarWithChildren key={tech.name} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
                     <a href={tech.link} target='_blank' rel='noreferrer'>
                       <div className=' rounded-full p-3 bg-white flex items-center justify-center'>
                         {
@@ -195,9 +195,9 @@ const TechnologiesPage = ({ page }) => {
           <h1 className='text-neutral-300 font-bold text-2xl'>Other Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
-              Others.map((tech, index) => (
+              Others.map((tech) => (
                 <div className='flex flex-col items-center justify-center'>
-                  <CircularProgressbarWithChildren key={index} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
+                  <CircularProgressbarWithChildren key={tech.name} value={tech.progress} className='w-16' styles={{ path: { stroke: tech.color } }} >
                     <a href={tech.link} target='_blank' rel='noreferrer'>
                       <div className=' rounded-full p-3 bg-white flex items-center justify-center'>
                         {
