@@ -7,18 +7,20 @@ import Links from '../components/Links';
 import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
-
+  const [submitting, setSubmitting] = React.useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setSubmitting(true);
     emailjs.sendForm('service_6vis7xu', 'template_qr0skco', form.current, '7D5qxkpi2qqsJbFPR')
       .then((result) => {
         toast.success('Message sent successfully !');
         form.current.reset();
+        setSubmitting(false);
       }, (error) => {
         toast.error('Something went wrong !');
+        setSubmitting(false);
       });
   };
 
@@ -54,7 +56,7 @@ const ContactPage = () => {
             <input required minLength={3} type='text' name='topic' id='title' placeholder='Title' className='w-[100%] bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
             <textarea required minLength={5} type='text' name='message' id='message' placeholder='Message' className='w-[100%] max-h-[200px] bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
             <div className='w-full flex items-center justify-center mt-6'>
-              <button type='submit' className=' bg-black border border-neutral-400 rounded-3xl text-neutral-400 px-10 py-2'>Send Message</button>
+              <button disabled={submitting} type='submit' className=' bg-black border border-neutral-400 rounded-3xl text-neutral-400 px-10 py-2'>Send Message</button>
             </div>
           </form>
           <div className='others hidden md:block w-[40%] pl-16'>
