@@ -38,7 +38,7 @@ function App() {
       opacity: 0,
       zIndex: -1,
     }).to(".bar", 1.5 , {
-      delay: 3.5,
+      delay: 0,
       height: 0,
       zIndex: -1,
       stagger: {
@@ -47,7 +47,7 @@ function App() {
       ease: "power4.inOut"
     }).to(".loading", {
       zIndex: -1,
-      duration: 0.1
+      duration: 0
     })
   }, [])
 
