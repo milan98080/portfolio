@@ -25,7 +25,7 @@ const AboutPage = ({ page }) => {
         <Links />
       </div>
       <div className='absolute md:hidden right-20 bottom-48'>
-        <MobileDownload />
+        <MobileDownload downloadCV={downloadCV}/>
       </div>
       <div className='hidden md:block md:absolute lg:items-center justify-center md:right-32 md:top-[25dvh]'>
         <img src='avatar.png' className='md:w-72 lg:w-80' />

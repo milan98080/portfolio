@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { FaFileDownload } from "react-icons/fa";
 
-const MobileDownload = () => {
+const MobileDownload = ({downloadCV}) => {
     const timeline = gsap.timeline();
     useLayoutEffect(() => {
         timeline.to('.button', {
@@ -20,8 +20,8 @@ const MobileDownload = () => {
 
     return (
         <div className='flex flex-col items-center justify-center'>
-            <h1 className=' text-white font-semibold mb-3'>Download CV</h1>
-            <div className='button w-20 h-20 rounded-full bg-gradient-to-tr from-teal-400 to-yellow-200 flex items-center justify-center shadow-md shadow-black'>
+            <h1 className=' text-white font-semibold mb-3 '>Download CV</h1>
+            <div onClick={downloadCV} className='button w-20 cursor-pointer h-20 rounded-full bg-gradient-to-tr from-teal-400 to-yellow-200 flex items-center justify-center shadow-md shadow-black'>
                 <div className=' outer w-16 h-16 rounded-full border-dashed border-2 border-black flex items-center justify-center'>
                     <FaFileDownload size={26} />
                 </div>
