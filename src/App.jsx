@@ -140,6 +140,10 @@ function App() {
     <div onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onMouseDown={handleTouchStart}
+      onMouseMove={handleTouchMove}
+      onMouseUp={handleTouchEnd}
+
     >
       <div className='loading absolute z-30'>
         <h1 className='counter fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-9xl '>{counter}</h1>
