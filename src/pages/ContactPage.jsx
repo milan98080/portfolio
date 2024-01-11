@@ -47,12 +47,12 @@ const ContactPage = () => {
               <input type='text' name='name' id='name' placeholder='Name' value={formData.name}
                 onChange={handleChange} className='w-[40%] bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-8 mr-2 p-2' />
               <input type='email' name='email' id='email' value={formData.email}
-                onChange={handleChange} placeholder='Email' className='w-[60%] bg-neutral-500 bg-transparent border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-8 p-2' />
+                onChange={handleChange} placeholder='Email' className='w-[60%] bg-neutral-500 bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-8 p-2' />
             </div>
             <input type='text' name='title' id='title' placeholder='Title' value={formData.title}
-              onChange={handleChange} className='w-[100%] bg-neutral-500 bg-transparent border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
+              onChange={handleChange} className='w-[100%] bg-neutral-500 bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
             <textarea type='text' name='message' id='message' placeholder='Message' value={formData.message}
-              onChange={handleChange} className='w-[100%] max-h-[200px] bg-neutral-500 bg-transparent border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
+              onChange={handleChange} className='w-[100%] max-h-[200px] bg-neutral-500 bg-neutral-500 border rounded-xl border-neutral-400 text-white text-xl focus:outline-none focus:border-white mt-4 p-2' />
             <div className='w-full flex items-center justify-center mt-6'>
               <button type='submit' className=' bg-black border border-neutral-400 rounded-3xl text-neutral-400 px-10 py-2'>Send Message</button>
             </div>
