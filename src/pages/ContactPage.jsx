@@ -59,15 +59,15 @@ const ContactPage = () => {
           </form>
           <div className='others hidden md:block w-[40%] pl-16'>
             <img src='avatar.png' className='w-60 hidden lg:block' />
-            <div className='flex mt-4'>
+            <div className='flex mt-4 items-center'>
               <SlLocationPin color='white' size={20} />
               <h1 className='text-neutral-400 text-xl ml-6'>Pokhara, Nepal</h1>
             </div>
-            <div className='flex mt-1'>
+            <div className='flex mt-1 items-center'>
               <CiMobile1 color='white' size={20} />
               <h1 className='text-neutral-400 text-xl ml-6'>+977-9808097406</h1>
             </div>
-            <div className='flex mt-1 md:hidden lg:block'>
+            <div className='flex mt-1 items-center'>
               <CiMail color='white' size={20} />
               <h1 className='text-neutral-400 text-xl ml-6'>mee.lawn111@gmail.com</h1>
             </div>
