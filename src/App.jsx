@@ -20,29 +20,29 @@ function App() {
     if (counter >= 100) {
       return;
     }
-  
+
     setCounter((prev) => {
       const newCounter = prev + Math.floor(Math.random() * 10) + 1;
-  
+
       if (newCounter > 100) {
         return 100;
       }
-  
+
       let delay = Math.floor(Math.random() * 900) + 50;
-  
+
       setTimeout(updateCounter, delay);
-  
+
       return newCounter;
     });
   };
 
   useLayoutEffect(() => {
     updateCounter();
-    tl.to(".counter", 0.25 , {
+    tl.to(".counter", 0.25, {
       delay: 2,
       opacity: 0,
       zIndex: -1,
-    }).to(".bar", 1.5 , {
+    }).to(".bar", 1.5, {
       delay: 0,
       height: 0,
       zIndex: -1,
@@ -105,27 +105,61 @@ function App() {
     })
   }
 
+  const [startX, setStartX] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (startX !== null) {
+      const currentX = e.touches[0].clientX;
+      const deltaX = currentX - startX;
+
+      if (Math.abs(deltaX) > minSwipeDistance) {
+        if (deltaX > 0) {
+          console.log('Significant swipe right');
+          if (currentPage != 1) { expand(page[currentPage - 2]); setCurrentPage(currentPage - 1) }
+        } else if (deltaX < 0) {
+          console.log('Significant swipe left');
+          if (currentPage != 4) { contract(page[currentPage - 1]); setCurrentPage(currentPage + 1) }
+        }
+
+        setStartX(null);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setStartX(null);
+  };
+
   return (
-    <>
-    <div className='loading absolute z-30'>
-    <h1 className='counter fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-9xl '>{counter}</h1>
-    <div className={` loader `}></div>
-    <div className='overlay h-[100dvh] w-[100dvw] z-10 flex'>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-      <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
-    </div>
-    </div>
+    <div onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className='loading absolute z-30'>
+        <h1 className='counter fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-9xl '>{counter}</h1>
+        <div className={` loader `}></div>
+        <div className='overlay h-[100dvh] w-[100dvw] z-10 flex'>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+          <div className='bar w-[10dvw] h-[100dvh] bg-[#1a1a1a]'></div>
+        </div>
+      </div>
       <section className={`${(currentPage > 4) && "w-[80dvw]"} forth absolute  lg:w-[100dvw] h-full flex`}>
         <div className=' h-full lg:ml-[15dvw] w-[100dvw] lg:w-[80dvw] bg-black bg-opacity-70 '>
-          <ContactPage page={currentPage}/>
+          <ContactPage page={currentPage} />
         </div>
         <div className='hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex flex-col items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(4)
@@ -136,7 +170,7 @@ function App() {
 
       <section className={`${(currentPage > 3) && "w-[80dvw]"} third absolute w-[100dvw] lg:w-[95dvw] h-full flex doublesecond triplefirst`}>
         <div className=' h-full lg:ml-[10dvw] w-[100dvw] lg:w-[80dvw] bg-black bg-opacity-70 '>
-          <TechnologiesPage page={currentPage}/>
+          <TechnologiesPage page={currentPage} />
         </div>
         <div className=' hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(3)
@@ -147,7 +181,7 @@ function App() {
 
       <section className={`${(currentPage > 2) && "w-[80dvw]"} second absolute w-[100dvw] lg:w-[90dvw] h-full flex doublefirst doublesecond triplefirst`}>
         <div className=' h-full lg:ml-[5dvw] w-[100dvw] lg:w-[80dvw] bg-black bg-opacity-70 '>
-          <WorkAndEducationPage page={currentPage}/>
+          <WorkAndEducationPage page={currentPage} />
         </div>
         <div className='hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(2)
@@ -158,7 +192,7 @@ function App() {
 
       <section className={`${(currentPage > 1) && "w-[80dvw]"} first absolute w-[100dvw]  lg:w-[85dvw] h-full flex doublefirst triplefirst`}>
         <div className=' relative h-full w-[100dvw] lg:w-[80dvw] bg-black bg-opacity-70 '>
-          <AboutPage page={currentPage}/>
+          <AboutPage page={currentPage} />
         </div>
         <div className=' hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(1)
@@ -166,8 +200,8 @@ function App() {
           <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl'>ABOUT ME</h1>
         </div>
       </section>
-      <MobileNav handleNext={() => {if(currentPage != 4){contract(page[currentPage-1]); setCurrentPage(currentPage+1)}}} handlePrev={() => {if(currentPage != 1){expand(page[currentPage-2]) , setCurrentPage(currentPage-1)}}} />
-    </>
+      <MobileNav handleNext={() => { if (currentPage != 4) { contract(page[currentPage - 1]); setCurrentPage(currentPage + 1) } }} handlePrev={() => { if (currentPage != 1) { expand(page[currentPage - 2]), setCurrentPage(currentPage - 1) } }} />
+    </div>
   );
 }
 
