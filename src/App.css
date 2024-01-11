@@ -18,3 +18,61 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.dots-loader {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+.dots-loader .dot {
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	margin: -10% 0 0 -10%;
+	background-color: #383855;
+	border-radius: 100%;
+}
+.dots-loader .dot:nth-child(1) {
+	left: 50%;
+	top: 50%;
+}
+.dots-loader .dot:nth-child(2),
+.dots-loader .dot:nth-child(3),
+.dots-loader .dot:nth-child(4) {
+	top: 10%;
+}
+.dots-loader .dot:nth-child(5),
+.dots-loader .dot:nth-child(6) {
+	top: 50%;
+}
+.dots-loader .dot:nth-child(7),
+.dots-loader .dot:nth-child(8),
+.dots-loader .dot:nth-child(9) {
+	top: 90%;
+}
+.dots-loader .dot:nth-child(2),
+.dots-loader .dot:nth-child(5),
+.dots-loader .dot:nth-child(7) {
+	left: 10%;
+}
+.dots-loader .dot:nth-child(3),
+.dots-loader .dot:nth-child(8) {
+	left: 50%;
+}
+.dots-loader .dot:nth-child(4),
+.dots-loader .dot:nth-child(6),
+.dots-loader .dot:nth-child(9) {
+	left: 90%;
+}
+.dots-loader .dot:nth-child(3) {
+	background-color: #4285f4;
+}
+.dots-loader .dot:nth-child(5) {
+	background-color: #ea4335;
+}
+.dots-loader .dot:nth-child(6) {
+	background-color: #fbbc05;
+}
+.dots-loader .dot:nth-child(8) {
+	background-color: #34a853;
+}
