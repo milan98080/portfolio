@@ -32,7 +32,7 @@ const AboutPage = ({page}) => {
           <h1 className='font-semibold text-xl text-white'>Download CV</h1>
         </div>
       </div>
-      <div className='absolute md:block mx-8 md:pt-10 lg:absolute flex flex-col lg:w-full bottom-32 lg:bottom-0 left-0  md:mx-16 lg:mb-10'>
+      <div className='absolute md:block mx-8 md:pt-10 lg:absolute flex flex-col lg:w-full bottom-32 lg:bottom-0 left-0  lg:mx-16 lg:mb-10'>
         <h1 className=' text-neutral-400 text-sm lg:text-xl mb-3'>Currently working at:</h1>
         <img src='bizbazarlogo.png' className='w-36 md:w-44 lg:w-64' />
       </div>

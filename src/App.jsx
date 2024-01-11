@@ -17,24 +17,29 @@ function App() {
   const tl = gsap.timeline();
 
   const updateCounter = () => {
-    if(counter === 100){
+    if (counter >= 100) {
       return;
     }
-    setCounter(prev=> prev + Math.floor(Math.random() * 10) + 1)
-
-    if(counter > 100){
-      setCounter(100);
-    }
-
-    let delay = Math.floor(Math.random() * 900) + 50;
-
-    setTimeout(updateCounter, delay);
-  }
+  
+    setCounter((prev) => {
+      const newCounter = prev + Math.floor(Math.random() * 10) + 1;
+  
+      if (newCounter > 100) {
+        return 100;
+      }
+  
+      let delay = Math.floor(Math.random() * 900) + 50;
+  
+      setTimeout(updateCounter, delay);
+  
+      return newCounter;
+    });
+  };
 
   useLayoutEffect(() => {
     updateCounter();
     tl.to(".counter", 0.25 , {
-      delay: 3.5,
+      delay: 2,
       opacity: 0,
       zIndex: -1,
     }).to(".bar", 1.5 , {
