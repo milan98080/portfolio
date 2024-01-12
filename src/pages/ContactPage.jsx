@@ -8,14 +8,21 @@ import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [submitting, setSubmitting] = React.useState(false);
+  const [ mailSent , setMailSent ] = React.useState(false);
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
     setSubmitting(true);
+    if (mailSent) {
+      toast.error('Message already sent ! Please Try again later.');
+      setSubmitting(false);
+      return;
+    }
     emailjs.sendForm('service_6vis7xu', 'template_qr0skco', form.current, '7D5qxkpi2qqsJbFPR')
       .then((result) => {
         toast.success('Message sent successfully !');
+        setMailSent(true);
         form.current.reset();
         setSubmitting(false);
       }, (error) => {
