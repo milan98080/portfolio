@@ -132,7 +132,7 @@ function App() {
     >
       <div className='loading absolute z-30'>
         <div className='logoimg fixed w-full h-full flex items-center justify-center'>
-          <img src='logo.png' className='w-60' />
+          <img src='logo.svg' className='w-60' />
         </div>
         <div className='logoimg fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-5xl '>
           <h1 className='counter-text'>Loading</h1>
