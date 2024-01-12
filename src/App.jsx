@@ -15,7 +15,7 @@ function App() {
 
   const tl = gsap.timeline();
 
-  
+
   useLayoutEffect(() => {
     tl.to(".counter-text", {
       duration: 3,
@@ -23,22 +23,30 @@ function App() {
       yoyo: true,
       repeat: -1,
       zIndex: -1,
-    }).to(".logoimg" ,{
-      duration: 2,
-      opacity: 0,
+    }).from(".progressbar", {
+      duration: 3,
+      width: 0,
       zIndex: -1,
-    }).to(".bar",{
-      delay: 0,
-      height: 0,
-      zIndex: -1,
-      stagger: {
-        amount: 0.5,
-      },
-      ease: "power4.inOut"
-    }).to(".loading", {
-      zIndex: -1,
-      duration: 0
+    }, '<').to(".progressbar", {
+      duration:2,
+      y: 100,
     })
+      .to(".logoimg", {
+        duration: 0.5,
+        opacity: 0,
+        zIndex: -1,
+      }, '<').to(".bar", {
+        delay: 0,
+        height: 0,
+        zIndex: -1,
+        stagger: {
+          amount: 0.5,
+        },
+        ease: "power4.inOut"
+      }).to(".loading", {
+        zIndex: -1,
+        duration: 0
+      })
   }, [])
 
   const navigate = (num) => {
@@ -132,10 +140,13 @@ function App() {
     >
       <div className='loading absolute z-30'>
         <div className='logoimg fixed w-full h-full flex items-center justify-center'>
-          <img src='logo.svg' className='w-60' />
+          <img src='logo.svg' className=' w-40 lg:w-60' />
         </div>
-        <div className='logoimg fixed w-full h-full flex justify-end items-end z-20 text-[#bcbcc4] px-[0.2em] py-[0.4em] text-5xl '>
-          <h1 className='counter-text'>Loading</h1>
+        <div className='logoimg fixed w-full h-full flex items-end justify-center z-20 text-[#bcbcc4] text-3xl md:text-4xl lg:text-5xl '>
+          <h1 className='counter-text mb-24'>Loading</h1>
+        </div>
+        <div className='progressbar fixed w-full h-full flex items-end justify-center z-20 text-[#bcbcc4] text-3xl md:text-4xl lg:text-5xl '>
+          <div className=' w-full h-5 bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400'></div>
         </div>
         <div className={` loader `}></div>
         <div className='overlay h-[100dvh] w-[100dvw] z-10 flex'>
