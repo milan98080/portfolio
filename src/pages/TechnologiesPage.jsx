@@ -6,7 +6,7 @@ import { FaAws, FaDocker } from "react-icons/fa";
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const TechnologiesPage = ({ page }) => {
+const TechnologiesPage = () => {
 
   const FrontendTechnologies = [
     {

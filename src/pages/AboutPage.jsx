@@ -4,7 +4,7 @@ import MobileDownload from '../components/MobileDownload';
 import Links from '../components/Links';
 import { MdOutlineSwipeLeft } from "react-icons/md";
 
-const AboutPage = ({ page }) => {
+const AboutPage = () => {
 
   const downloadCV = () => {
     const aTag = document.createElement('a');
