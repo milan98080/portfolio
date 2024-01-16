@@ -169,7 +169,7 @@ function App() {
         <div className='hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex flex-col items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(4)
         }}>
-          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl'>CONTACT</h1>
+          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl font-poppins'>CONTACT</h1>
         </div>
       </section>
 
@@ -180,7 +180,7 @@ function App() {
         <div className=' hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(3)
         }}>
-          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl'>TECHNOLOGIES</h1>
+          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl font-poppins'>TECHNOLOGIES</h1>
         </div>
       </section>
 
@@ -191,7 +191,7 @@ function App() {
         <div className='hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(2)
         }}>
-          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl'>WORK AND EDUCATION</h1>
+          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl font-poppins'>WORK AND EDUCATION</h1>
         </div>
       </section>
 
@@ -202,7 +202,7 @@ function App() {
         <div className=' hidden h-full w-[5dvw] bg-black bg-opacity-80 lg:flex items-center justify-center cursor-pointer whitespace-nowrap' onClick={() => {
           navigate(1)
         }}>
-          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl'>ABOUT ME</h1>
+          <h1 className=' rotate-90 cursor-pointer text-white font-bold text-3xl font-poppins'>ABOUT ME</h1>
         </div>
       </section>
       <MobileNav handleNext={() => { if (currentPage != 4) { contract(page[currentPage - 1]); setCurrentPage(currentPage + 1) } }} handlePrev={() => { if (currentPage != 1) { expand(page[currentPage - 2]), setCurrentPage(currentPage - 1) } }} />

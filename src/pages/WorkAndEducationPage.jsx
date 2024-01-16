@@ -39,14 +39,14 @@ const WorkAndEducationPage = () => {
       <TopBar />
       <div className=' w-full px-8 h-[70dvh] overflow-scroll md:mt-10'>
         <div className='work w-full'>
-          <h1 className='text-white font-bold text-2xl'>Experience</h1>
+          <h1 className='text-white font-bold text-2xl font-poppins'>Experience</h1>
           <div className='mt-4 flex gap-5 flex-col md:flex-row'>
             {
               WorkExperience.map((work, index) => (
                 <div key={index} className='flex flex-col flex-wrap md:w-[50%]'>
-                  <h1 className='text-neutral-400 text-lg'>{work.duration}</h1>
-                  <h1 className='text-neutral-300 font-semibold text-xl'>{work.company} &#183; <span className=' font-thin text-lg'>{work.position}</span></h1>
-                  <h1 className='text-neutral-400 text-sm py-1'>{work.description}</h1>
+                  <h1 className='text-neutral-400 text-lg font-poppins'>{work.duration}</h1>
+                  <h1 className='text-neutral-300 font-semibold text-xl font-poppins'>{work.company} &#183; <span className=' font-thin text-lg'>{work.position}</span></h1>
+                  <h1 className='text-neutral-400 text-sm py-1 font-poppins'>{work.description}</h1>
                   <div className='flex flex-wrap'>
                   {
                     work.tags.map((tag, index) => (
@@ -60,14 +60,14 @@ const WorkAndEducationPage = () => {
           </div>
         </div>
         <div className='education w-full mt-8 md:mt-12'>
-          <h1 className='text-white font-bold text-2xl mt-3'>Education</h1>
+          <h1 className='text-white font-bold text-2xl mt-3 font-poppins'>Education</h1>
           <div className='mt-4 flex flex-col gap-3'>
             {
               Education.map((edu, index) => (
                 <div key={index}>
-                  <h1 className='text-neutral-400 text-lg'>{edu.duration}</h1>
-                  <h1 className='text-neutral-300 font-semibold text-xl '>{edu.institution}</h1>
-                  <h1 className='text-neutral-400 text-sm py-1'>{edu.degree}</h1>
+                  <h1 className='text-neutral-400 text-lg font-poppins'>{edu.duration}</h1>
+                  <h1 className='text-neutral-300 font-semibold text-xl font-poppins'>{edu.institution}</h1>
+                  <h1 className='text-neutral-400 text-sm py-1 font-poppins'>{edu.degree}</h1>
                 </div>
               ))
             }

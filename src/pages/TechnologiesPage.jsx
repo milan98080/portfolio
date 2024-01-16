@@ -116,7 +116,7 @@ const TechnologiesPage = () => {
       <TopBar />
       <div className=' w-full px-8 h-[70dvh] overflow-scroll md:mt-10 md:grid md:grid-cols-2 grid-rows-2 md:gap-3'>
         <div className='frontend w-full mb-5'>
-          <h1 className=' text-neutral-300 font-bold text-2xl'>Frontend Tools</h1>
+          <h1 className=' text-neutral-200 font-bold text-2xl font-poppins'>Frontend Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
               FrontendTechnologies.map((tech) => (
@@ -136,14 +136,14 @@ const TechnologiesPage = () => {
                       </div>
                     </a>
                   </CircularProgressbarWithChildren>
-                  <h1 className=' mt-2 font-thin text-xl text-white '>{tech.name}</h1>
+                  <h1 className=' mt-2 font-thin text-xl text-neutral-300 font-poppins'>{tech.name}</h1>
                 </div>
               ))
             }
           </div>
         </div>
         <div className='backend w-full mb-5'>
-          <h1 className='text-neutral-300  font-bold text-2xl'>Backend Tools</h1>
+          <h1 className='text-neutral-200  font-bold text-2xl font-poppins'>Backend Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
               BackendTechnologies.map((tech) => (
@@ -163,14 +163,14 @@ const TechnologiesPage = () => {
                       </div>
                     </a>
                   </CircularProgressbarWithChildren>
-                  <h1 className=' mt-2 font-thin text-xl text-white '>{tech.name}</h1>
+                  <h1 className=' mt-2 font-thin text-xl text-neutral-300 font-poppins '>{tech.name}</h1>
                 </div>
               ))
             }
           </div>
         </div>
         <div className='cloud w-full mb-5'>
-          <h1 className='text-neutral-300 font-bold text-2xl'>Cloud Tools</h1>
+          <h1 className='text-neutral-200 font-bold text-2xl font-poppins'>Cloud Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
               CloudTechnologies.map((tech) => (
@@ -185,14 +185,14 @@ const TechnologiesPage = () => {
                       </div>
                     </a>
                   </CircularProgressbarWithChildren>
-                  <h1 className=' mt-2 font-thin text-xl text-white '>{tech.name}</h1>
+                  <h1 className=' mt-2 font-thin text-xl text-neutral-300 font-poppins'>{tech.name}</h1>
                 </div>
               ))
             }
           </div>
         </div>
         <div className='others w-full'>
-          <h1 className='text-neutral-300 font-bold text-2xl'>Other Tools</h1>
+          <h1 className='text-neutral-200 font-bold text-2xl font-poppins'>Other Tools</h1>
           <div className='mt-4 flex gap-4 md:gap-6 flex-wrap'>
             {
               Others.map((tech) => (
@@ -207,7 +207,7 @@ const TechnologiesPage = () => {
                       </div>
                     </a>
                   </CircularProgressbarWithChildren>
-                  <h1 className=' mt-2 font-thin text-xl text-white '>{tech.name}</h1>
+                  <h1 className=' mt-2 font-thin text-xl text-neutral-300 font-poppins'>{tech.name}</h1>
                 </div>
               ))
             }
