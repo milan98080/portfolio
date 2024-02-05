@@ -37,8 +37,8 @@ const AboutPage = () => {
         <MdOutlineSwipeLeft size={20} className=' text-white'/> &nbsp; &nbsp; <h1 className=' text-neutral-400 font-thin text-base font-poppins'> Swipe to Explore</h1>
       </div>
       <div className='absolute md:block mx-8 md:pt-10 lg:absolute flex flex-col lg:w-full bottom-20 md:bottom-32 lg:bottom-0 left-0  lg:mx-16 lg:mb-10'>
-        <h1 className=' text-neutral-400 text-sm lg:text-xl mb-3 font-poppins'>Currently working at:</h1>
-        <img src='bizbazarlogo.png' className='w-36 md:w-44 lg:w-64' />
+        <h1 className=' text-neutral-400 text-sm lg:text-xl mb-3 font-poppins'>Currently an intern at:</h1>
+        <img src='leapfrog.svg' className='w-36 md:w-44 lg:w-64' />
       </div>
     </>
   )
